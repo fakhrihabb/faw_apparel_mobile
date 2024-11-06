@@ -43,3 +43,93 @@ Berikut perbedaan antara `const` dan `final`:
 
 
 ### 5. Bagaimana setiap checklist tugas dipenuhi?
+#### a.  Membuat sebuah program Flutter baru dengan tema E-Commerce yang sesuai dengan tugas-tugas sebelumnya.
+Demi mempermudah proses pembuatan program, saya menggunakan fitur **_New flutter project_** dalam Android Studio. Setelah itu, kode _default_ dimodifikasi sehingga terpisah dalam 2 file, `main.dart` dan `menu.dart`. Adapun isi `main.dart`, yakni `main()` yang meng-run `MyApp` dan `MyApp` yang me-return `MaterialApp` dengan home `MyHomePage`. Sementara itu, isi `menu.dart` adalah `MyHomePage` yang mendukung `MaterialApp` dan cards, seperti `InfoCard` dan `ItemCard`.
+
+#### b. Membuat tiga tombol sederhana dengan ikon dan teks untuk: Melihat daftar produk (Lihat Daftar Produk), Menambah produk (Tambah Produk), Logout (Logout)
+Mengimplementasikan `ItemCard` sebagai tombol yang dapat diklik. Agar interaktif dan memunculkan `SnackBar`, diimplementasikan `InkWell`.
+```
+...
+      child: InkWell(
+        // Aksi ketika kartu ditekan.
+        onTap: () {
+          // Menampilkan pesan SnackBar saat kartu ditekan.
+          ScaffoldMessenger.of(context)
+            ..hideCurrentSnackBar()
+            ..showSnackBar(SnackBar(
+                content: Text("Kamu telah menekan tombol ${item.name}!")));
+        },
+        // Container untuk menyimpan Icon dan Text
+        child: Container(
+          padding: const EdgeInsets.all(8),
+          child: Center(
+            child: Column(
+              // Menyusun ikon dan teks di tengah kartu.
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  item.icon,
+                  color: Colors.white,
+                  size: 30.0,
+                ),
+                const Padding(padding: EdgeInsets.all(3)),
+                Text(
+                  item.name,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(color: Colors.white),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+      ...
+```
+Kustomisasi warna dan ikon dilakukan dalam `MyHomePage`, ketika meng-construct `ItemHomePage` (yang kemudian digunakan ketika app meng-construct `ItemCard`).
+```
+...
+  final List<ItemHomepage> items = [
+    ItemHomepage(
+        "Lihat Daftar Produk", Icons.shopping_bag, Colors.grey.shade500),
+    ItemHomepage("Tambah Produk", Icons.add, Colors.grey.shade700),
+    ItemHomepage("Logout", Icons.logout, Colors.grey.shade900),
+  ];
+  ...
+```
+
+#### c. Mengimplementasikan warna-warna yang berbeda untuk setiap tombol (Lihat Daftar Produk, Tambah Produk, dan Logout).
+Jika kita melihat section sebelumnya, telah jelas bahwa kustomisasi warna dan ikon dilakukan dalam `MyHomePage`, ketika meng-construct `ItemHomePage` (yang kemudian digunakan ketika app meng-construct `ItemCard`).
+```
+...
+  final List<ItemHomepage> items = [
+    ItemHomepage(
+        "Lihat Daftar Produk", Icons.shopping_bag, Colors.grey.shade500),
+    ItemHomepage("Tambah Produk", Icons.add, Colors.grey.shade700),
+    ItemHomepage("Logout", Icons.logout, Colors.grey.shade900),
+  ];
+...
+```
+`ItemCard` kemudian akan menerima argumen color dari `ItemHomePage` dan menggunakannya dalam atribut `color`.
+```
+...
+  Widget build(BuildContext context) {
+    return Material(
+      color: item.color,
+      ...
+```
+
+#### d. Memunculkan Snackbar dengan tulisan
+Memanfaatkan `InkWell` dengan properti `onTap` yang akan menampilkan `SnackBar` dengan tulisan yang sesuai.
+```
+...
+      child: InkWell(
+        // Aksi ketika kartu ditekan.
+        onTap: () {
+          // Menampilkan pesan SnackBar saat kartu ditekan.
+          ScaffoldMessenger.of(context)
+            ..hideCurrentSnackBar()
+            ..showSnackBar(SnackBar(
+                content: Text("Kamu telah menekan tombol ${item.name}!")));
+        },
+        ...
+```
