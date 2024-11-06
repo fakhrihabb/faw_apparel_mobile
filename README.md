@@ -1,16 +1,22 @@
-# faw_apparel_mobile
+# FawApparel - Mobile Edition
 
-World's best clothing-line
+World's best clothing-line >_<
 
-## Getting Started
+## Tugas 1
 
-This project is a starting point for a Flutter application.
+### 1. Apa itu _stateless widget_ dan _stateful widget_?
+**_Stateless widget_** adalah widget yang sifatnya statis atau tidak berubah. Properti yang ada di dalam widget ini tidak akan bisa berubah setelah dibuat, sehingga cocok untuk bagian UI yang bersifat tetap. Sementara itu, **_stateful widget_** adalah kebalikannya, bersifat dinamis atau berubah-ubah. Properti yang ada di dalam widget ini bisa berubah-ubah, sehingga cocok untuk bagian UI yang harus berubah sesuai _behavior_ pengguna.
+| Sifat  | Stateless | Stateful | 
+| ------------- | ------------- | ------------- |
+| **Mutable**  | Immutable atau tidak dapat berubah | Mutable atau dapat berubah  |
+| **Pengelolaan State**  | Tidak memiliki pengelolaan state  | Memiliki objek State untuk mengelola state  |
+| **Rebuild** | Dibangun ulang hanya saat widget parent berubah | Dibangun ulang setiap kali setState dipanggil |
+| **Kasus Penggunaan Ideal** | Elemen UI statis | Elemen UI dinamis yang perlu merespons perubahan |
 
-A few resources to get you started if this is your first Flutter project:
+### 2. Widget apa saja yang digunakan dalam proyek ini?
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### 3. Apa fungsi dari `setState()`? Variabel apa saja yang dapat terdampak?
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 4. Apa itu `const` dan `final`?
+
+### 5. Bagaimana setiap checklist tugas dipenuhi?
