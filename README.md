@@ -27,13 +27,19 @@ Terdapat berbagai widget yang digunakan dalam penyelesaian Tugas 1 ini, antara l
 * `SizedBox`: Membuat kotak tidak terlihat yang biasa diposisikan antara widget untuk memberi jarak.
 * `InkWell`: Merespon tap user dengan efek ripple.
 * `MediaQuery`: Menyesuaikan lebar widget berdasarkan ukuran layar perangkat.
-* SnackBar: Memberikan pesan kepada pengguna dalam bentuk _alert_.
-
-
-
+* `SnackBar`: Memberikan pesan kepada pengguna dalam bentuk _alert_.
 
 ### 3. Apa fungsi dari `setState()`? Variabel apa saja yang dapat terdampak?
+Fungsi dari `setState()` dalam Flutter adalah untuk memberitahu framework bahwa ada perubahan pada state yang membutuhkan pembaruan tampilan (rebuild). Ketika `setState()` dipanggil, Flutter akan memicu proses rebuild sehingga tampilan dapat disesuaikan dengan perubahan yang terjadi pada state. Dalam proyek ini, tidak ada _stateful widget_, sehingga tidak ada variabel apapun yang terdampak. Akan tetapi, dalam _general case_, variabel yang terdampak dapat berupa integer, boolean, list, map, dan string.
 
-### 4. Apa itu `const` dan `final`?
+### 4. Apa perbedaan `const` dan `final`?
+Berikut perbedaan antara `const` dan `final`:
+| Perbedaan | `final` | `const` |
+| ------------- | ------------- | ------------- |
+| Penetapan Nilai | Ditentukan saat runtime | Ditentukan saat compile |
+| Sifat Nilai | Nilainya tetap setelah ditetapkan | Nilainya harus konstan dan tidak berubah sama sekali |
+| Kapan Digunakan | Ketika nilai hanya diketahui saat runtime | Ketika nilai sudah pasti sejak awal (compile-time) |
+| Penggunaan pada Objek | Bisa pada objek yang nilainya tidak berubah setelah dibuat | Hanya bisa digunakan untuk objek yang nilainya sudah pasti sejak awal |
+
 
 ### 5. Bagaimana setiap checklist tugas dipenuhi?
