@@ -1,5 +1,5 @@
 import 'package:faw_apparel_mobile/screens/product_form.dart';
-import 'package:faw_apparel_mobile/widgets/mood_card.dart';
+import 'package:faw_apparel_mobile/widgets/product_card.dart';
 import 'package:flutter/material.dart';
 import 'package:faw_apparel_mobile/widgets/left_drawer.dart';
 
