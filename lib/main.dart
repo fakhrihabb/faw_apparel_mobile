@@ -1,3 +1,4 @@
+import 'package:faw_apparel_mobile/screens/login.dart';
 import 'package:flutter/material.dart';
 import 'screens/menu.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
           ).copyWith(secondary: Colors.deepPurple[400]),
           useMaterial3: true,
         ),
-        home: MyHomePage(),
+        home: const LoginPage(),
       ),
     );
   }
