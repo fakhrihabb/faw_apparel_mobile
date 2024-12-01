@@ -15,7 +15,7 @@ class ProductPage extends StatefulWidget {
 class _ProductPageState extends State<ProductPage> {
   Future<List<Product>> fetchProduct(CookieRequest request) async {
     // TODO: Ganti URL dan jangan lupa tambahkan trailing slash (/) di akhir URL!
-    final response = await request.get('http://10.0.2.2/json/');
+    final response = await request.get('http://127.0.0.1:8000/json/');
 
     // Melakukan decode response menjadi bentuk json
     var data = response;
@@ -75,9 +75,9 @@ class _ProductPageState extends State<ProductPage> {
                       const SizedBox(height: 10),
                       Text("${snapshot.data![index].fields.description}"),
                       const SizedBox(height: 10),
-                      Text("${snapshot.data![index].fields.price}"),
+                      Text("\$${snapshot.data![index].fields.price}"),
                       const SizedBox(height: 10),
-                      Text("${snapshot.data![index].fields.time}")
+                      // Text("${snapshot.data![index].fields.time}")
                     ],
                   ),
                 ),
